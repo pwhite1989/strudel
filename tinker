@@ -1,0 +1,17 @@
+$: note ("<[bb2,f3,d4] [c3,g3,e4] [f3,a3,f4] [a2, e3 ,a4]>")
+
+$: sound("hh*16").gain("[.25 1]*4").stack(
+  note("c4(5,8)")
+)
+
+$: sound("bd*4,[~ sd:1]*2")
+
+$: note("<[db2 d3]*4 [g1 g2]*4 [f2 f3]*4 [eb2 eb3]*4>")
+  .scale("C:ionian")
+  .sound("sawtooth")
+  .pan(tri
+       .range(0, 1)
+       .slow(4))
+  .lpf(saw
+       .range(2000, 500))
+._scope()
