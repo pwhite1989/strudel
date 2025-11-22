@@ -1,5 +1,5 @@
 // "Circus is in town"
-// @by Patrick White
+// @by Paddy
 
 let chords = chord(`<AbM CM DbM <CbM [CbM CbM7]>>`)
 
