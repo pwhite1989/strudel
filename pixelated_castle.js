@@ -1,6 +1,8 @@
 // "Pixelated Castle"
 // @by Paddy
 
+set(140/4)
+
 let chords = chord(`<AbM CM DbM <CbM [CbM CbM7]>>`)
 
 pattern: "<~ ~ 0 0 0 1 1 1 2 2 ~ ~>/8".pickRestart([
@@ -13,7 +15,7 @@ chord_progression: "<0 0 0 0 0 0 0 0 0 0 0 ~>/8".pickRestart([
   chords.struct("- x - x").voicing().room(.5)
 ])
 
-blip: "<0 0 0 0 0 0 0 0 0 0 0 ~>/8".pickRestart([
+glitch: "<0 0 0 0 0 0 0 0 0 0 0 ~>/8".pickRestart([
   n("~@16 [0 - 1 -]").set(chords).mode("<below above duck root>:Cb6").voicing()
 ])
 
@@ -23,7 +25,7 @@ neeow: "<~ ~ ~ ~ ~ ~ ~ 0 1 2 0 ~>/8".pickRestart([
   stack(
     note("c2@2").s("sine").penv(74).pdec(1.5),
     note("c2@2").s("triangle").penv(74).pdec(1.5).gain(0.3).room(1).echo(23, 1/6, .8)
-  ).attack(0.01).decay(1.5).sustain(0.1).release(0.3).postgain(0.1)
+  ).attack(0.01).decay(1.5).sustain(0.1).release(0.3).postgain(0.1).jux(rev).pan(sine.slow(2))
 ])
 
 bass: "<~ 0 0 0 0 0 0 0 0 0 ~ ~>/8".pickRestart([
